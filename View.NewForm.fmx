@@ -1,0 +1,271 @@
+inherited NewFormFrame: TNewFormFrame
+  inherited MainLayout: TGridPanelLayout
+    ControlCollection = <
+      item
+        Column = 0
+        Control = HeaderRect
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = EdtAccKey
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = EdtPhoneNum
+        Row = 2
+      end
+      item
+        Column = 0
+        Control = PnlParams
+        Row = 3
+      end
+      item
+        Column = 0
+        Control = MemResponse
+        Row = 4
+      end
+      item
+        Column = 0
+        Control = RctInfo
+        Row = 5
+      end>
+    RowCollection = <
+      item
+        Value = 10.702521342003220000
+      end
+      item
+        Value = 11.798576120714030000
+      end
+      item
+        SizeStyle = Auto
+        Value = 10.000000000000000000
+      end
+      item
+        Value = 18.663526682580000000
+      end
+      item
+        Value = 34.220103309529650000
+      end
+      item
+        Value = 24.615272545173120000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    inherited HeaderRect: TRectangle
+      Size.Height = 60.469245910644530000
+      inherited CaptionLbl: TLabel
+        Size.Height = 57.469245910644530000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'New Form'
+        inherited HamburgerImg: TPath
+          Size.Height = 40.469245910644530000
+          inherited HitBox: TLayout
+            Size.Height = 46.469245910644530000
+          end
+        end
+      end
+    end
+    object EdtAccKey: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = []
+      TabOrder = 0
+      TextSettings.Font.Size = 14.000000000000000000
+      Position.X = 24.000000000000000000
+      Position.Y = 82.800224304199220000
+      Size.Width = 280.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'API Access Key'
+      StyledSettings = [Family, Style, FontColor]
+    end
+    object EdtPhoneNum: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = []
+      TabOrder = 1
+      TextSettings.Font.Size = 14.000000000000000000
+      Position.X = 24.000000000000000000
+      Position.Y = 127.131202697753900000
+      Size.Width = 280.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Phone Number'
+      StyledSettings = [Family, Style, FontColor]
+    end
+    object PnlParams: TPanel
+      Anchors = []
+      Position.X = 24.000000000000000000
+      Position.Y = 165.855651855468800000
+      Size.Width = 280.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object CBBCountryCode: TComboBox
+        Items.Strings = (
+          'US'
+          'UZ'
+          'RU'
+          '')
+        Position.X = 16.000000000000000000
+        Position.Y = 8.000000000000000000
+        TabOrder = 0
+      end
+      object ChkFormat: TCheckBox
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family, Style, FontColor]
+        IsChecked = True
+        Position.X = 208.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 88.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Debug'
+        TextSettings.Font.Size = 14.000000000000000000
+      end
+      object BtnRequest: TButton
+        Align = Bottom
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 15.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Send Request'
+        TextSettings.Font.Size = 14.000000000000000000
+        OnClick = BtnRequestClick
+      end
+    end
+    object MemResponse: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      StyledSettings = [Family, Style, FontColor]
+      TextSettings.Font.Size = 14.000000000000000000
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 318.000000000000000000
+      Size.Height = 183.343566894531300000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Viewport.Width = 314.000000000000000000
+      Viewport.Height = 179.300000000000000000
+    end
+    object RctInfo: TRectangle
+      Align = Client
+      Fill.Color = claAliceblue
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 318.000000000000000000
+      Size.Height = 129.076293945312500000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 25.000000000000000000
+      YRadius = 25.000000000000000000
+      object LblValid: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 288.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'IsValid: '
+        TabOrder = 3
+      end
+      object LblCountry: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 288.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'Country: '
+        TabOrder = 2
+      end
+      object LblLocation: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 288.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'Carrier:'
+        TabOrder = 1
+      end
+      object LblLineType: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 15.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 15.000000000000000000
+        Position.X = 15.000000000000000000
+        Position.Y = 86.000000000000000000
+        Size.Width = 288.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'Line Type:'
+        TabOrder = 0
+      end
+    end
+  end
+  object RESTClient1: TRESTClient
+    BaseURL = 'http://apilayer.net/api/validate'
+    Params = <>
+    Left = 48
+    Top = 312
+  end
+  object RESTRequest1: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    Left = 152
+    Top = 312
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 256
+    Top = 312
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 148
+    Top = 389
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = RESTResponse1
+      FieldName = 'Content'
+      Control = MemResponse
+      Track = False
+    end
+  end
+end

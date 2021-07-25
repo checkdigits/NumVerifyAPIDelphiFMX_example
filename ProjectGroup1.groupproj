@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B4EF452E-6D41-436F-BE71-C32656AA1C93}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Test\NumVerifyAPIDelphiFireMonkey_tests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NumVerifyAPIDelphiFireMonkey.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NumVerifyAPIDelphiFireMonkey_tests">
+        <MSBuild Projects="Test\NumVerifyAPIDelphiFireMonkey_tests.dproj"/>
+    </Target>
+    <Target Name="NumVerifyAPIDelphiFireMonkey_tests:Clean">
+        <MSBuild Projects="Test\NumVerifyAPIDelphiFireMonkey_tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NumVerifyAPIDelphiFireMonkey_tests:Make">
+        <MSBuild Projects="Test\NumVerifyAPIDelphiFireMonkey_tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NumVerifyAPIDelphiFireMonkey">
+        <MSBuild Projects="NumVerifyAPIDelphiFireMonkey.dproj"/>
+    </Target>
+    <Target Name="NumVerifyAPIDelphiFireMonkey:Clean">
+        <MSBuild Projects="NumVerifyAPIDelphiFireMonkey.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NumVerifyAPIDelphiFireMonkey:Make">
+        <MSBuild Projects="NumVerifyAPIDelphiFireMonkey.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NumVerifyAPIDelphiFireMonkey_tests;NumVerifyAPIDelphiFireMonkey"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NumVerifyAPIDelphiFireMonkey_tests:Clean;NumVerifyAPIDelphiFireMonkey:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NumVerifyAPIDelphiFireMonkey_tests:Make;NumVerifyAPIDelphiFireMonkey:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
